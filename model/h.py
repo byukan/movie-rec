@@ -77,4 +77,4 @@ def compute_similarity(main_index, sentences):
     mean_pooled)
     
     ranked_list = sorted([(i, x) for i, x in enumerate(similarity_scores[0])], key=lambda x: x[1], reverse=True)
-    return ranked_list
+    return ranked_list[:10]
