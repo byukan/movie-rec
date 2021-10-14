@@ -1,0 +1,28 @@
+.header {
+  padding: 60px;
+  text-align: center;
+  background:#DCDCDC;
+  color: black;
+  font-size: 30px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+    
+form {
+        width: 600px;
+        margin: auto;
+        margin-top: 20px;
+      }
+input {
+        padding: 4px 10px;
+        border: 0;
+        font-size: 16px;
+      }
+.search {
+        width: 100%;
+      }
+.submit {
+        width: 70px;
+        background-color: black;
+        color: #ffffff;
+      }

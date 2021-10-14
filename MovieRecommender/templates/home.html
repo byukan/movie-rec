@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Home Page</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" type="text/css"> 
+  
+</head>
+
+<body>
+    <div class="header">
+  <h1>MovRec</h1>
+  <form action="/form/submit" method="GET">
+      <input type="text" name="text" class="search" placeholder="Search here!">
+      <input type="submit" name="submit" class="submit" value="Search">
+    </form>
+  
+</div>
+    
+
+
+
+    </body>
+    </html>
