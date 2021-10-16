@@ -9,6 +9,7 @@
 from transformers import AutoTokenizer, AutoModel
 import torch
 from sklearn.metrics.pairwise import cosine_similarity
+from sentence_transformers import SentenceTransformer
 
 
 def calculate_sentence_embedding(text):
@@ -78,3 +79,12 @@ def compute_similarity(main_index, sentences):
     
     ranked_list = sorted([(i, x) for i, x in enumerate(similarity_scores[0])], key=lambda x: x[1], reverse=True)
     return ranked_list[:10]
+
+
+def sentence_transformer_similarity(sentences):
+    """
+    quicker approach
+    returns sentence embeddings for a list of sentences
+    """
+    model = SentenceTransformer('bert-base-nli-mean-tokens')
+    return model.encode(sentences)
