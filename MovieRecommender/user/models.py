@@ -16,14 +16,9 @@ class User:
 
         # Encrypt the password
         user['password'] = pbkdf2_sha256.hash(user['password'])
-
-
-        #Check for the existing email addess
-
-        if db.users.find_one({"email": user['email']}):
+          #Check for the existing email add             if db.users.find_one({"email": user['email']}):
             return jsonify({"error": "Email address already in use"}), 400
-
-        if db.users.insert_one(user):
+         if db.users.insert_one(user):
             return jsonify(user), 200
 
         
