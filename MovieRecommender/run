@@ -1,3 +1,0 @@
-FLASK_APP=MovRec.py
-FLASK_APP=development
-flask run
