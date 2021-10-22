@@ -3,7 +3,7 @@
 
 
 from mov_rec import db
-# from flask import Response
+from flask import Response
 import json
 
 
@@ -14,9 +14,14 @@ def test_create_user():
         # for attr in dir(dbResponse):
         #     print(attr)
         print(dbResponse.inserted_id)
-        # return Response(
-        #     response=json.dumps({"message": "user created", "id": f"{dbResponse.inserted_id}"}), 
-        #     status=200, 
-        #     mimetype="application/json")
+        return Response(
+            response=json.dumps(
+                {
+                    "message": "user created", 
+                    "id": f"{dbResponse.inserted_id}"
+                }
+            ), 
+            status=200, 
+            mimetype="application/json")
     except Exception as ex:
         print(ex)
