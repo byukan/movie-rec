@@ -1,2 +1,2 @@
 class Config:
-    MONGO_URI = "mongodb://localhost:27017/movie"
+    MONGO_URI = "mongodb://localhost:27017/stub"

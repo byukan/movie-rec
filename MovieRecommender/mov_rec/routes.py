@@ -1,5 +1,5 @@
 from flask import Flask, render_template ## request, session
-from mov_rec import app, database
+from mov_rec import app
 from mov_rec.models import User
 
 

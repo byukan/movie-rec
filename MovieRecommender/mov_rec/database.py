@@ -1,4 +1,6 @@
-# this file is to consolidate all database interactions
+# this file is to consolidate all database interactions:
+# use any below defined method to interact with the database (currently a stub)
+
 
 from mov_rec import db
 # from flask import Response
