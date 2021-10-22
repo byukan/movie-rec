@@ -1,26 +1,13 @@
-from flask import (
-    Flask, 
-    render_template, 
-    request, 
-    session
-)
- 
+from flask import Flask, render_template, request, session
+import pymongo
 
-
-class User:
-    def __init__(self, id, username,password):
-        self.id = id
-        self.username = username
-        self.password = password
-    def __repr__(self):
-        return f'<User: {self.username}>'
-
-users = [] 
-users.append(User(id =1, username = 'Aybike', password = 'passwordaybike'))
-
-print(users)
 
 app = Flask(__name__)  
+
+client = pymongo.MongoClient('localhost', 27017)
+db= client.user_login_system
+
+from user import routes
 
 @app.route("/")
 @app.route("/home")
