@@ -3,12 +3,13 @@ from passlib.hash import pbkdf2_sha256
 # from MovRec import db
 import uuid
 
+
 class User:
     def signup(self):
         print(request.form)
 
         user = {
-            "-id": uuid.uuid4().hex,
+            "_id": uuid.uuid4().hex,
             "name": request.form.get('name'),
             "email": request.form.get('email'),
             "password": request.form.get('password')
