@@ -1,6 +1,7 @@
 from flask import Flask, jsonify, request
 from passlib.hash import pbkdf2_sha256
 # from MovRec import db
+from mov_rec import database
 import uuid
 
 
@@ -15,8 +16,14 @@ class User:
             "password": request.form.get('password')
         }
 
+        print(user)
+
         # Encrypt the password
         user['password'] = pbkdf2_sha256.hash(user['password'])
+        
+        database.test_create_user()
+
+
           #Check for the existing email add             if db.users.find_one({"email": user['email']}):
             # return jsonify({"error": "Email address already in use"}), 400
         # if db.users.insert_one(user):
