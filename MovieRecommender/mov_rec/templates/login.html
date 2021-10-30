@@ -1,15 +1,11 @@
-<!DOCTYPE html>
-<html>
+{% extends "base.html" %}
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Login</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" type="text/css"> 
-  
-</head>
+{% block head %}
+{% block title %}Login{% endblock %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" type="text/css">
+{% endblock %}
 
-<body>
+{% block content %}
     <script src="/static/js/jquery.js"></script>
     <script src="/static/js/scripts.js"></script>   
     <div class="center">
@@ -27,8 +23,6 @@
             <input type="submit" value="Login">
 
         </form>
-</div>
+    </div>
 
-  </body>
-
-</html>
+{% endblock %}
