@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
-{% block title %}Login{% endblock %}
+<!-- {% block title %}Signup{% endblock %} -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css') }}" type="text/css">
 {% endblock %}
 
@@ -12,7 +12,7 @@
 
       <h1 class="center">Create an Account</h1>
 
-      <form name="signup_form">
+      <form name="signup_form" method="POST">
 
         <label for="name">Name</label>
         <input type="text" name="name" class="field" required>

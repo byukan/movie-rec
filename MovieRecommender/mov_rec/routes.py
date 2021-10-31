@@ -6,18 +6,25 @@ from mov_rec.models import User
 @app.route("/")
 @app.route("/home")
 def home():
-    print("app.debug=", app.debug, "from routes.py")
+    _print_debug_statement("app.debug=", app.debug, "routes")
     # resp = database.test_create_user()
-    # print(resp, "from module routes.py")
+    # resp = database.movie_info(1)
+    # _print_debug_statement("", resp, "routes")
     return render_template ('home.html')
 
-@app.route("/login")
+
+@app.route("/login/") # not yet implemented
 def login():
     return render_template ('login.html')
 
-@app.route("/signup/", methods=['GET', 'POST']) # 'POST' not implemented yet
+
+@app.route("/signup/", methods=['GET', 'POST']) # POST not completely implemented
 def signup():
     if request.method == 'POST':
-        print("you are here")
         return User().signup()
     return render_template ('signup.html') # method is 'GET'
+
+
+def _print_debug_statement(description, element, module):
+    if app.debug:
+        print(description, element, ", from module " + module + ".py")

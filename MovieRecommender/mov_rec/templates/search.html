@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block head %}
-<!-- {% block title %}Home{% endblock %} -->
+<!-- {% block title %}Search{% endblock %} -->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" type="text/css">
 {% endblock %}
 
@@ -9,10 +9,21 @@
 
 <div class="header">
   <h1>MovRec</h1>
-    <form action="/form/submit" method="GET">
+    <form name="search_movies" method="POST">
       <input type="text" name="text" class="search" placeholder="Search here!">
       <input type="submit" name="submit" class="submit" value="Search">
     </form>
 </div>
+
+<div>
+    <b><a href="{{ url_for ('view_movie', id=1) }}">Shawshank Redemption</a></b>
+    <br>
+</div>
+
+<!-- {% for movie in movies %}
+<b>
+<a href="{{ url_for ('view_movie', id=movie.id)}}">{{ movie.title }}</a>
+</b><br>
+{% endfor %} -->
 
 {% endblock %}

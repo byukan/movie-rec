@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block head %}
+<!-- {% block title %}View Movie | {{ movie.title }} {% endblock %} -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/movie.css') }}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<p>
+    {% if movie %}
+
+        image: {{ movie.poster_url }}
+        <!-- <img src="{{ movie.poster_url }}"> -->
+        id: {{ movie.id }}
+        title: {{ movie.title }}
+        year: {{ movie.year }}
+        director: {{ movie.director }}
+
+    {% else %}
+
+        <i>No movie provided</i>
+
+    {% endif %}
+</p>
+{% endblock %}
