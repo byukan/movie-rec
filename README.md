@@ -27,7 +27,7 @@ We've chosen this project because recommender systems are very common; almost ev
 
 ## Team
 
-[Aybike Bayraktar](https://github.com/aybikke), [Jonathan Fisher](https://github.com/Jfish2), [Annat Koren](https://github.com/a-kor-en), & [Brant Yukan](https://github.com/byukan)
+[Aybike Bayraktar](https://github.com/aybikke), [Annat Koren](https://github.com/a-kor-en), & [Brant Yukan](https://github.com/byukan)
 
 ## License
 
