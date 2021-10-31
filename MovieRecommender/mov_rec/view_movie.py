@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from mov_rec import app, database
 
 
-@app.route("/view_movie/", methods=['GET', 'POST']) # POST is for liking or favoriting a movie; not implemented yet
+@app.route("/view_movie", methods=['GET', 'POST']) # POST is for liking or favoriting a movie; not implemented yet
 def view_movie():
     movie_id = request.args.get('id') # picks up url parameter
 

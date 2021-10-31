@@ -3,13 +3,13 @@
 
 
 from mov_rec import db
-from flask import Response
+from flask import request, Response
 import json
+from bson.objectid import ObjectId
 
 
-def test_create_user():
+def add_user(user):
     try:
-        user = {'first_name': "Guido", 'last_name': "van Rossum", 'age': 65}
         
         dbResponse = db.users.insert_one(user)
         # for attr in dir(dbResponse):
@@ -29,18 +29,24 @@ def test_create_user():
         print(ex)
 
 
-def movie_info(movie_id):
+def movie_info(movie_id): # not currently working
     try:
-        dbResponse = db.movies.find({'id': movie_id })
-        for attr in dir(dbResponse):
-            print(attr)
+        movie_count = db.movies.count_documents({})
+        print("movie count:", movie_count)
+
+        results = list(db.movies.find({'id': movie_id }))
+        # results = list(db.movies.find({'id': f"{movie_id}" }))
+        print(results)
+
+        for result in results:
+            result["_id"] = str(result["_id"])
+            print(result["_id"], result["title"])
         
+        # for attr in dir(dbResponse):
+        #     print(attr)
+
         return Response(
-            response=json.dumps(
-                {
-                    "message": f"movie info for movie_id {movie_id}"
-                }
-            ), 
+            response=json.dumps(results), 
             status=200, 
             mimetype="application/json")
     except Exception as ex:
