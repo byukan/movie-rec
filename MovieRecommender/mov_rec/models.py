@@ -1,26 +1,29 @@
 from flask import Flask, jsonify, request
-from passlib.hash import pbkdf2_sha256
+# from passlib.hash import pbkdf2_sha256
 # from MovRec import db
-import uuid
+from mov_rec import bcrypt, database
+# import uuid
 
 
+# consider not having a user class and methods
+# rather: add this functionality to a login_register module instead
 class User:
     def signup(self):
         print(request.form)
 
+        # need to check for existing email first (not implemented yet)
+        # return jsonify({"error": "Email address already in use"}), 400
+
         user = {
-            "_id": uuid.uuid4().hex,
-            "name": request.form.get('name'),
-            "email": request.form.get('email'),
-            "password": request.form.get('password')
+            'name': request.form["name"], 
+            'email': request.form["email"], 
+            "password_hash": User.hash_password(request.form["password"]) # encrypt password
         }
 
-        # Encrypt the password
-        user['password'] = pbkdf2_sha256.hash(user['password'])
-          #Check for the existing email add             if db.users.find_one({"email": user['email']}):
-            # return jsonify({"error": "Email address already in use"}), 400
-        # if db.users.insert_one(user):
-        #     return jsonify(user), 200
-
-        
-        return jsonify({"error": "Signup failed"}), 400
+        print(user)
+        database.add_user(user)
+        return jsonify({"message": "Signing up"}), 200 # instead, render a different page
+    
+    @classmethod
+    def hash_password(cls, password):
+        return bcrypt.generate_password_hash(password).decode('utf-8')
