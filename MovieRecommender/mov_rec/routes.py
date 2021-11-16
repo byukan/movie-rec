@@ -25,6 +25,12 @@ def signup():
     return render_template ('signup.html') # method is 'GET'
 
 
+@app.route("/usersfeed/")
+def usersfeed():
+    return render_template ('usersfeed.html')
+
+
 def _print_debug_statement(description, element, module):
     if app.debug:
         print(description, element, ", from module " + module + ".py")
+
