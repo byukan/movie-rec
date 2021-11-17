@@ -6,20 +6,49 @@
 {% endblock %}
 
 {% block content %}
-<p>
     {% if movie %}
+        <aside class="left" style="float: left">
+            <img src="{{ movie.Poster_Link }}" alt="Poster for {{ movie.Series_Title }}" height="600">
+        </aside>
 
-        image: {{ movie.poster_url }}
-        <!-- <img src="{{ movie.poster_url }}"> -->
-        id: {{ movie.id }}
-        title: {{ movie.title }}
-        year: {{ movie.year }}
-        director: {{ movie.director }}
+        <main>
+            {# Available values are below #}
+            id: {{ movie._id }} <br>
+            title: {{ movie.Series_Title }} <br>
+            year: {{ movie.Released_Year }} <br>
+            director: {{ movie.Director }} <br>
+            duration: {{ movie.Runtime }} <br>
+            genre: {{ movie.Genre }} <br>
+            IMDB rating: {{ movie.IMDB_Rating }} <br>
+            Votes: {{ movie.No_of_Votes }} <br>
+
+            {% if movie.Gross != movie.Gross %} {# this means the value is NAN #}
+            {% else %}
+            gross: ${{ movie.Gross }} <br>
+            {% endif %}
+
+
+            <br>
+
+            {% set stars = [ movie.Star1, movie.Star2, movie.Star3, movie.Star4 ] %}
+
+            Stars <br>
+            <ul>
+                {% for star in stars %}
+                    {% if not star == None %}
+                        <li>{{ star }}</li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+
+            <br>
+
+            {{ movie.Overview }}
+        </main>
 
     {% else %}
-
         <i>No movie provided</i>
 
     {% endif %}
-</p>
+
 {% endblock %}

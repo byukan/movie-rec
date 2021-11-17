@@ -29,27 +29,23 @@ def add_user(user):
         print(ex)
 
 
-def movie_info(movie_id): # not currently working
+def movie_info(movie_id):
+    result = None
+
     try:
-        movie_count = db.movies.count_documents({})
-        print("movie count:", movie_count)
+        # movie_count = db.movies.count_documents({})
+        # print("movie count:", movie_count)
 
-        results = list(db.movies.find({'id': movie_id }))
-        # results = list(db.movies.find({'id': f"{movie_id}" }))
-        print(results)
+        # print("searching for movie with id:", movie_id)
 
-        for result in results:
-            result["_id"] = str(result["_id"])
-            print(result["_id"], result["title"])
-        
-        # for attr in dir(dbResponse):
-        #     print(attr)
+        # results = list(db.movies.find({'_id': movie_id}))
+        result = db.movies.find_one({'_id': movie_id})
 
-        return Response(
-            response=json.dumps(results), 
-            status=200, 
-            mimetype="application/json")
+        # if result:  # for result in results:
+        #     for item in result:
+        #         print(item + ":", result[item])
+
     except Exception as ex:
         print(ex)
     
-    return None
+    return result
