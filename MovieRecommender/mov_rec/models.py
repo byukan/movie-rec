@@ -17,12 +17,12 @@ class User:
         user = {
             'name': request.form["name"], 
             'email': request.form["email"], 
-            "password_hash": User.hash_password(request.form["password"]) # encrypt password
+            "password_hash": User.hash_password(request.form["password"])  # encrypt password
         }
 
-        print(user)
-        database.add_user(user)
-        return jsonify({"message": "Signing up"}), 200 # instead, render a different page
+        # print("in module models.py:\n", user)
+        user_id = database.add_user(user)
+        return jsonify({"message": "Signing up user: " + user_id}), 200  # instead, render a different page
     
     @classmethod
     def hash_password(cls, password):

@@ -9,24 +9,20 @@ from bson.objectid import ObjectId
 
 
 def add_user(user):
+    user_id = None
     try:
         
-        dbResponse = db.users.insert_one(user)
+        db_response = db.users.insert_one(user)
         # for attr in dir(dbResponse):
         #     print(attr)
-        print(dbResponse.inserted_id)
-        
-        return Response(
-            response=json.dumps(
-                {
-                    "message": "user created", 
-                    "id": f"{dbResponse.inserted_id}"
-                }
-            ), 
-            status=200, 
-            mimetype="application/json")
+        print(db_response.inserted_id)
+
+        user_id = str(db_response.inserted_id)
+
     except Exception as ex:
         print(ex)
+
+    return user_id
 
 
 def movie_info(movie_id):
