@@ -29,6 +29,10 @@ We've chosen this project because recommender systems are very common; almost ev
 - Data Source:
 - https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows
 
+
+## Testing
+- This project uses pytest.  Running pytest without mentioning a filename will run all files of format test_*.py or *_test.py in the current directory and subdirectories. Pytest automatically identifies those files as test files.
+
 ## Team
 
 [Aybike Bayraktar](https://github.com/aybikke), [Jonathan Fisher](https://github.com/Jfish2), [Annat Koren](https://github.com/a-kor-en), & [Brant Yukan](https://github.com/byukan)
