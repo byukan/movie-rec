@@ -4,7 +4,7 @@
 
 from mov_rec import db
 from flask import request, Response
-import json
+import json, random
 from bson.objectid import ObjectId
 
 
@@ -55,6 +55,8 @@ def movie_info(movie_id):
                     'Poster_Link': 'https://m.media-amazon.com/images/M/MV5BZGIxODNjM2YtZjA5Mi00MjA5LTk2YjItODE0OWI5NThjNTBmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@.jpg'
                 }
             ]
+            # generate random next movie id
+            result["next_id"] = random.randint(0, 999)
 
     except Exception as ex:
         print(ex)
