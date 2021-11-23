@@ -4,7 +4,9 @@
 
 from mov_rec import db
 from flask import request, Response
-import json, random
+import json
+import random
+import ast
 from bson.objectid import ObjectId
 
 
@@ -25,40 +27,53 @@ def add_user(user):
     return user_id
 
 
-def movie_info(movie_id):
+def movie_info(movie_id, is_suggestion=False):
     result = None
 
     try:
-        # movie_count = db.movies.count_documents({})
-        # print("movie count:", movie_count)
-        # print("searching for movie with id:", movie_id)
-
-        # results = list(db.movies.find({'_id': movie_id}))
         result = db.movies.find_one({'_id': movie_id})
 
-        # hardcoded similar movies
         if result:
-            result["similar_movies"] = [
-                {
-                    '_id': 502,
-                    'Series_Title': "Iron Man",
-                    'Poster_Link': 'https://m.media-amazon.com/images/M/MV5BMTczNTI2ODUwOF5BMl5BanBnXkFtZTcwMTU0NTIzMw@@.jpg'
-                },
-                {
-                    '_id': 103,
-                    'Series_Title': "Reservoir Dogs",
-                    'Poster_Link': 'https://m.media-amazon.com/images/M/MV5BZmExNmEwYWItYmQzOS00YjA5LTk2MjktZjEyZDE1Y2QxNjA1XkEyXkFqcGdeQXVyMTQxNzMzNDI@.jpg'
-                },
-                {
-                    '_id': 900,
-                    'Series_Title': "The Raid",
-                    'Poster_Link': 'https://m.media-amazon.com/images/M/MV5BZGIxODNjM2YtZjA5Mi00MjA5LTk2YjItODE0OWI5NThjNTBmXkEyXkFqcGdeQXVyNzQ1ODk3MTQ@.jpg'
-                }
-            ]
             # generate random next movie id
             result["next_id"] = random.randint(0, 999)
+
+            # add suggestions if needed
+            if not is_suggestion:
+                result["Suggestions"] = []
+                similar_movie_ids = similar_movies(movie_id)[1:]
+
+                for similar in similar_movie_ids:
+                    id = similar[0]
+                    result["Suggestions"].append(movie_info(id, True))
 
     except Exception as ex:
         print(ex)
     
     return result
+
+
+def similar_movies(movie_id):
+    try:
+        # similar_count = db.similar_movies.count_documents({})
+        # print("similar movies count:", similar_count)
+
+        db_response = db.similar_movies.find_one({'_id': movie_id}, {'_id': 0})
+
+        if db_response:
+            most_similar_movies = ast.literal_eval(db_response["similarity_scores"])
+            # most_similar_movies = re.findall('\([^\)]*\)', db_response["similarity_scores"])
+            return most_similar_movies
+
+    except Exception as ex:
+        print(ex)
+
+    return None
+
+
+def highest_rated_movies():
+    # First sort all the docs by rating, and take the first 9
+    movies = list(db.movies.find({}).sort([('IMDB_Rating', -1), ('Series_Title', 1)]).limit(9))
+    # print("movies:\n")
+    # for movie in movies:
+    #     print(movie['_id'], movie['Series_Title'], movie['IMDB_Rating'])
+    return movies
