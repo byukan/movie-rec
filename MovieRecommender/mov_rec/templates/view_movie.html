@@ -48,7 +48,7 @@
 
                 <hr>
                 <div>
-                    <button class ="btn">Show me a different movie</button>
+                    <button class ="btn" ><a href="{{ url_for ('view_movie', id=movie.next_id) }}" >Show me a different movie</a></button>
                     {# button should go to {{ url_for ('view_movie', id=movie.next_id) }} #}
                 </div>
             </div>

@@ -48,12 +48,16 @@ h3{
     
 
 }
+.btn a{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 .recommendations .box2{
     width: 300px;
-    height: auto;
-   
+    height: 380px;
     float: left;
+   
     margin-left: 120px;
     box-sizing: border-box;
     border:1px solid darkgray;
@@ -62,7 +66,10 @@ h3{
     padding-left: auto;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 20px;
 }
+
+
 .box2 img{
     padding-top: 20px;
     width: 200px;
