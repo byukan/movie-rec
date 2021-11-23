@@ -28,8 +28,8 @@ input {
 .search_results .box3{
     width: 300px;
     height: auto;
-
     float: left;
+
     margin-left: 120px;
     box-sizing: border-box;
     border:1px solid darkgray;
@@ -38,6 +38,7 @@ input {
     padding-left: auto;
     padding-top: 20px;
     padding-bottom: 20px;
+    margin-bottom: 20px;
 }
 .box3 img{
     padding-top: 20px;
