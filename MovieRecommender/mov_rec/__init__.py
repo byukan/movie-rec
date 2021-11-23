@@ -17,4 +17,4 @@ except ConnectionFailure:
     print("ERROR: Server unavailable")
 
 
-from mov_rec import database, models, routes, search, view_movie
+from mov_rec import database, models, routes, home, view_movie
