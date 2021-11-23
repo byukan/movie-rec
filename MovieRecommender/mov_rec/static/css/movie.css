@@ -35,3 +35,42 @@ h3{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
 }
+ .btn{
+    display: block;
+    border: 1px;
+    font-size: 16px;
+    padding: 16px 30px;
+    border-radius: 20px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    align-self: center;
+    
+
+}
+
+.recommendations .box2{
+    width: 300px;
+    height: auto;
+   
+    float: left;
+    margin-left: 120px;
+    box-sizing: border-box;
+    border:1px solid darkgray;
+    text-align: center;
+    background: lightgray;
+    padding-left: auto;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.box2 img{
+    padding-top: 20px;
+    width: 200px;
+    height: auto;
+}
+.box2 a{
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+
+}
+
