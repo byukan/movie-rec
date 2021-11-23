@@ -2,7 +2,7 @@
 
 {% block head %}
 <!-- {% block title %}Search{% endblock %} -->
-<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}" type="text/css">
+<link rel="stylesheet" href="{{ url_for('static', filename='css/search.css') }}" type="text/css">
 {% endblock %}
 
 {% block content %}
@@ -15,15 +15,16 @@
     </form>
 </div>
 
-<div>
-    <b><a href="{{ url_for ('view_movie', id=1) }}">Shawshank Redemption</a></b>
-    <br>
+<div class="search_results">
+    {# Movies will only have id, poster link, and series title available #}
+    {% for movie in movies %}
+        <div class="box3">
+            <a href="{{ url_for ('view_movie', id=movie._id) }}">
+                {{ movie.Series_Title }}<br>
+                <img src="{{ movie.Poster_Link }}" alt="Poster thumbnail">
+            </a>
+        </div>
+    {% endfor %}
 </div>
-
-<!-- {% for movie in movies %}
-<b>
-<a href="{{ url_for ('view_movie', id=movie.id)}}">{{ movie.title }}</a>
-</b><br>
-{% endfor %} -->
 
 {% endblock %}
