@@ -2,7 +2,7 @@ from flask import Flask, render_template, request
 from mov_rec import app, database
 
 
-@app.route("/search/", methods=['GET', 'POST'])
+@app.route("/home/", methods=['GET', 'POST'])
 def search():
     movies = []
 
@@ -15,7 +15,7 @@ def search():
         #     {score: { $meta: "textScore" }}
         # )
 
-    else:
+    else:  # method is GET
         movies = database.highest_rated_movies()
 
-    return render_template('search.html', movies=movies)
+    return render_template('home.html', movies=movies)

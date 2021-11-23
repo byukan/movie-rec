@@ -3,14 +3,14 @@ from mov_rec import app, database
 from mov_rec.models import User
 
 
-@app.route("/")
-@app.route("/home")
-def home():
-    _print_debug_statement("app.debug=", app.debug, "routes")
-    # resp = database.test_create_user()
-    # resp = database.movie_info(1)
-    # _print_debug_statement("", resp, "routes")
-    return render_template ('home.html')
+# @app.route("/")
+# @app.route("/home")
+# def home():
+#     _print_debug_statement("app.debug=", app.debug, "routes")
+#     # resp = database.test_create_user()
+#     # resp = database.movie_info(1)
+#     # _print_debug_statement("", resp, "routes")
+#     return render_template ('home.html')
 
 
 @app.route("/login/")  # not yet implemented
