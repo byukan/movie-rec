@@ -18,8 +18,6 @@
             <div class="content">
                 {# Available values are below #}
 
-                {# add refresh button going to {{ url_for ('view_movie', id=movie.next_id) }} somewhere on the page #}
-
                 <b>Released:</b> {{ movie.Released_Year }} <br>
                 <b>Director:</b> {{ movie.Director }} <br>
                 <b>Duration:</b> {{ movie.Runtime }} <br>
@@ -47,11 +45,12 @@
                 <br>
 
                 {{ movie.Overview }}
-<hr>
-               <div>
-                   <button class ="btn"> Didn't you like me?</button>
 
-               </div> 
+                <hr>
+                <div>
+                    <button class ="btn">Show me a different movie</button>
+                    {# button should go to {{ url_for ('view_movie', id=movie.next_id) }} #}
+                </div>
             </div>
         </div>
 
@@ -61,12 +60,12 @@
             
             {# Similar movies will only have id, poster link, and series title available #}
             {% for similar in movie.similar_movies %}
-            <div class="box2">
-                <a href="{{ url_for ('view_movie', id=similar._id) }}">
-                    {{ similar.Series_Title }}<br>
-                    <img src="{{ similar.Poster_Link }}" alt="Poster thumbnail" >
-            </div>     
-                </a>
+                <div class="box2">
+                    <a href="{{ url_for ('view_movie', id=similar._id) }}">
+                        {{ similar.Series_Title }}<br>
+                        <img src="{{ similar.Poster_Link }}" alt="Poster thumbnail">
+                    </a>
+                </div>
             {% endfor %}
         </div>
 
