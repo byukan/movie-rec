@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from mov_rec import app, database
 
-
+@app.route("/")
 @app.route("/home/", methods=['GET', 'POST'])
 def search():
     movies = []

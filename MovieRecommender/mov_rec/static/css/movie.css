@@ -51,6 +51,7 @@ h3{
 .btn a{
     color: white;
     font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
 }
 
 .recommendations .box2{
@@ -58,7 +59,7 @@ h3{
     height: 380px;
     float: left;
    
-    margin-left: 120px;
+    margin-left: 100px;
     box-sizing: border-box;
     border:1px solid darkgray;
     text-align: center;
