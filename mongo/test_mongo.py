@@ -9,6 +9,10 @@ def test_mongo_connect():
                                      'similarity_scores': '[(1, 0.9999998), (3, 0.80469614), (412, 0.8000324), (238, 0.7922034), (953, 0.7791466), (40, 0.7775347), (172, 0.7746029), (294, 0.77392906), (974, 0.7722475), (560, 0.76852435)]'}
     assert requested_similar_movie_object == expected_similar_movie_object
 
+
+def test_mongo_movies():
+    client = MongoClient("mongodb+srv://m001-student:3@r.vu0ut.mongodb.net/movie?retryWrites=true&w=majority")
+    db = client['movie']
     request_movie_object = db.movies.find_one(2)
     expected_movie_object = {'_id': 2,
                              'Poster_Link': 'https://m.media-amazon.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@.jpg',
