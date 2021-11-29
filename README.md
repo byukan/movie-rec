@@ -25,6 +25,14 @@ This website allows visitors to search, sort, and rate movies, and will recommen
 
 We've chosen this project because recommender systems are very common; almost every business wants or uses them. Some of us are also interested in working with text data to find semantic similarities. Beneficiaries of this website include anyone who wants to save time finding movies they will enjoy or appreciate.
 
+## Resources
+- Data Source:
+- https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows
+
+
+## Testing
+- This project uses pytest.  Running pytest without mentioning a filename will run all files of format test_*.py or *_test.py in the current directory and subdirectories. Pytest automatically identifies those files as test files.
+
 ## Team
 
 [Aybike Bayraktar](https://github.com/aybikke), [Annat Koren](https://github.com/a-kor-en), & [Brant Yukan](https://github.com/byukan)
