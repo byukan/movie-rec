@@ -7,12 +7,13 @@
 <p align="center">
   <sup>
     MovieRec is a website with a recommender system for movies.
-    
-    [![youtube movie rec](https://img.youtube.com/vi/eyzZRgSytEM/0.jpg)](https://www.youtube.com/watch?v=eyzZRgSytEM)
-    
+        
   </sup>
   <br>
 </p>
+
+    [![youtube movie rec](https://img.youtube.com/vi/eyzZRgSytEM/0.jpg)](https://www.youtube.com/watch?v=eyzZRgSytEM)
+
 
 ***
 
