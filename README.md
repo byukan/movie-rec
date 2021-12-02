@@ -12,7 +12,10 @@
   <br>
 </p>
 
-    [![youtube movie rec](https://img.youtube.com/vi/eyzZRgSytEM/0.jpg)](https://www.youtube.com/watch?v=eyzZRgSytEM)
+
+## YouTube Video Link
+https://youtu.be/eyzZRgSytEM
+[![Alt text](https://img.youtube.com/vi/eyzZRgSytEM/maxresdefault.jpg)](https://www.youtube.com/watch?v=eyzZRgSytEM)
 
 
 ***
