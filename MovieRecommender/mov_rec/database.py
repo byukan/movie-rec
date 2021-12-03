@@ -27,7 +27,7 @@ def add_user(user):
     return user_id
 
 
-def movie_info(movie_id, is_suggestion=False):
+def movie_info(movie_id, is_main=False):
     result = None
 
     try:
@@ -38,13 +38,13 @@ def movie_info(movie_id, is_suggestion=False):
             result["next_id"] = random.randint(0, 999)
 
             # add suggestions if needed
-            if not is_suggestion:
+            if is_main:
                 result["Suggestions"] = []
                 similar_movie_ids = similar_movies(movie_id)[1:]
 
                 for similar in similar_movie_ids:
                     id = similar[0]
-                    result["Suggestions"].append(movie_info(id, True))
+                    result["Suggestions"].append(movie_info(id))
 
     except Exception as ex:
         print(ex)
