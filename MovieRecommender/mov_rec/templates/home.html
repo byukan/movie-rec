@@ -17,19 +17,21 @@
 
 <div class="search_results">
     {# Movies will only have id, poster link, and series title available #}
+
     {% if movies|length == 0 %}
         <div class="error">
             Internal error occurred: no results to display!
         </div>
-    {% else %}
-        {% for movie in movies %}
-            <div class="box3">
-                <a href="{{ url_for ('view_movie', id=movie._id) }}">{{ movie.Series_Title }}<br>
-                    <img src="{{ movie.Poster_Link }}" alt="Poster thumbnail">
-                </a>
-            </div>
-        {% endfor %}
     {% endif %}
+    
+    {% for movie in movies %}
+        <div class="box3">
+            <a href="{{ url_for ('view_movie', id=movie._id) }}">{{ movie.Series_Title }}<br>
+                <img src="{{ movie.Poster_Link }}" alt="Poster thumbnail">
+            </a>
+        </div>
+    {% endfor %}
+
 </div>
 
 {% endblock %}

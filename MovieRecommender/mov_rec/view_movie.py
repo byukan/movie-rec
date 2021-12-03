@@ -4,14 +4,11 @@ from mov_rec import app, database
 
 @app.route("/view_movie", methods=['GET', 'POST'])  # POST is for liking or favoriting a movie; not implemented yet
 def view_movie():
-    movie_id = int(request.args.get('id'))  # picks up url parameter
+    movie_id = None
+    movie_id_string = request.args.get('id')
+    if movie_id_string:
+        movie_id = int(movie_id_string)
+    # print('url param & id:', movie_id_string, movie_id)
 
-    # print("getting movie info for movie_id:", movie_id, ", from module view_movie.py")
     movie = database.movie_info(movie_id, True)
-
-    # if movie:
-    #     print("Movie retrieved:", movie)
-    # else:
-    #     print("No movie found")
-
     return render_template('view_movie.html', movie=movie)

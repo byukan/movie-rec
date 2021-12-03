@@ -27,7 +27,10 @@ def add_user(user):
     return user_id
 
 
-def movie_info(movie_id, is_main=False):
+def movie_info(movie_id=None, is_main=False):
+    if movie_id is None:  # note: 0 is an existing id
+        movie_id = random.randint(0, 999)
+
     result = None
 
     try:
@@ -54,14 +57,10 @@ def movie_info(movie_id, is_main=False):
 
 def similar_movies(movie_id):
     try:
-        # similar_count = db.similar_movies.count_documents({})
-        # print("similar movies count:", similar_count)
-
         db_response = db.similar_movies.find_one({'_id': movie_id}, {'_id': 0})
 
         if db_response:
             most_similar_movies = ast.literal_eval(db_response["similarity_scores"])
-            # most_similar_movies = re.findall('\([^\)]*\)', db_response["similarity_scores"])
             return most_similar_movies
 
     except Exception as ex:
@@ -73,7 +72,4 @@ def similar_movies(movie_id):
 def highest_rated_movies():
     # First sort all the docs by rating, and take the first 9
     movies = list(db.movies.find({}).sort([('IMDB_Rating', -1), ('Series_Title', 1)]).limit(9))
-    # print("movies:\n")
-    # for movie in movies:
-    #     print(movie['_id'], movie['Series_Title'], movie['IMDB_Rating'])
     return movies
