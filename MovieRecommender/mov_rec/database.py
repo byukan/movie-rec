@@ -27,18 +27,22 @@ def add_user(user):
     return user_id
 
 
-def movie_info(movie_id=None, is_main=False):
-    if movie_id is None:  # note: 0 is an existing id
-        movie_id = random.randint(0, 999)
+def _set_next_id():
+    return random.randint(0, 999)
+
+
+def find_movie(id):
+    return db.movies.find_one({'_id': id})
+
+
+def movie_info(movie_id, is_main=False):
 
     result = None
 
     try:
-        result = db.movies.find_one({'_id': movie_id})
+        result = find_movie(movie_id)
 
         if result:
-            # generate random next movie id
-            result["next_id"] = random.randint(0, 999)
 
             # add suggestions if needed
             if is_main:
@@ -47,12 +51,13 @@ def movie_info(movie_id=None, is_main=False):
 
                 for similar in similar_movie_ids:
                     id = similar[0]
-                    result["Suggestions"].append(movie_info(id))
+                    similar_info, _ = movie_info(id)
+                    result["Suggestions"].append(similar_info)
 
     except Exception as ex:
         print(ex)
     
-    return result
+    return result, _set_next_id()
 
 
 def similar_movies(movie_id):
