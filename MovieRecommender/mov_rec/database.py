@@ -74,6 +74,23 @@ def similar_movies(movie_id):
     return None
 
 
+def search_movies(search_term):
+    movies = []
+
+    try:
+        # Full text search using search term
+        # Sort results by relevance, then rating, then title
+        # Take the first 9
+        movies = list(
+            db.movies.find({'$text': {'$search': search_term}}, {'score': {'$meta': 'textScore'}}).sort([('score', {'$meta': 'textScore'}), ('IMDB_Rating', -1), ('Series_Title', 1)]).limit(9))
+
+    except Exception as ex:
+        print(ex)
+
+    print("Movies:\n", movies)
+    return movies
+
+
 def highest_rated_movies():
     # First sort all the docs by rating, and take the first 9
     movies = list(db.movies.find({}).sort([('IMDB_Rating', -1), ('Series_Title', 1)]).limit(9))
