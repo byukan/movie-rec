@@ -87,7 +87,6 @@ def search_movies(search_term):
     except Exception as ex:
         print(ex)
 
-    print("Movies:\n", movies)
     return movies
 
 
