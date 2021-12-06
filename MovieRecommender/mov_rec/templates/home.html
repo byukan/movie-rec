@@ -10,8 +10,9 @@
 <div class="header">
   <h1>MovieRec</h1>
     <form name="search_movies" method="POST">
-      <input type="text" name="search_term" class="search" placeholder="Search here!">
-      <input type="submit" name="submit" class="submit" value="Search">
+        <input type="text" name="search_term" class="field" placeholder="Search here!" required>
+        <p class="error error--hidden"></p>
+        <input type="submit" name="submit" class="submit" value="Search">
     </form>
 </div>
 

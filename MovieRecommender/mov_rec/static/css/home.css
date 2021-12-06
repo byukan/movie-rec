@@ -50,3 +50,11 @@ input {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
 }
+
+p {
+  margin: 24px 0;
+}
+
+.error--hidden {
+  display: none;
+}
