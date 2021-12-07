@@ -52,15 +52,12 @@
 
                 <hr>
 
-                <div>
-                    <button class ="btn">
-                        <a href="{{ url_for ('view_movie', id=next_id) }}">Show Me a Different Movie</a>
-                        
-                    </button>
-                    <button class="btn2">
-                        <a href="{{ url_for ('search') }}">Go Back To Homepage</a>
-                    </button>
-                </div>
+                <button class ="btn">
+                    <a href="{{ url_for('view_movie', id=next_id) }}">Show Me a Different Movie</a>
+                </button>
+                <button class="btn2">
+                    <a href="{{ url_for('search') }}">Go Back to Search Page</a>
+                </button>
 
             </div>
         </div>
@@ -69,7 +66,7 @@
         <div class="recommendations">
             {% for suggestion in movie.Suggestions %}
                 <div class="box2">
-                    <a href="{{ url_for ('view_movie', id=suggestion._id) }}">{{ suggestion.Series_Title }}<br>
+                    <a href="{{ url_for('view_movie', id=suggestion._id) }}">{{ suggestion.Series_Title }}<br>
                         <img src="{{ suggestion.Poster_Link }}" alt="Poster thumbnail">
                     </a>
                 </div>
@@ -79,7 +76,10 @@
     {% else %}
         <hr>
         <button class ="btn">
-            <a href="{{ url_for ('view_movie', id=next_id) }}">Show me a different movie</a>
+            <a href="{{ url_for('view_movie', id=next_id) }}">Show me a different movie</a>
+        </button>
+        <button class="btn2">
+            <a href="{{ url_for('search') }}">Go Back to Search Page</a>
         </button>
     {% endif %}
 

@@ -45,8 +45,6 @@ h3{
     color: white;
     cursor: pointer;
     align-self: center;
-    
-
 }
 .btn a{
     color: white;
@@ -59,7 +57,7 @@ h3{
     font-size: 16px;
     padding: 16px 30px;
     border-radius: 20px;
-    background: #696969;
+    background: #aaa;
     color: black;
     cursor: pointer;
     align-self: center;
