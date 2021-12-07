@@ -1,4 +1,4 @@
-.box{
+.box {
     top: 10%;
     left: 10%;
     padding: 20px;
@@ -9,13 +9,13 @@
     border: 2px solid black;
 }
 
-.box img{
+.box img {
     width: 300px;
     height: auto;
     border: 2px solid black;
 }
 
-header{
+header {
     padding: 30px;
 
     text-align: center;
@@ -26,16 +26,17 @@ header{
     border: 3px solid black;
 }
 
-.box .content{
+.box .content {
     padding-left: 20px;
 }
 
-h3{
+h3 {
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 25px;
 }
- .btn{
+
+.btn {
     display: block;
     border: 1px;
     font-size: 16px;
@@ -46,12 +47,14 @@ h3{
     cursor: pointer;
     align-self: center;
 }
-.btn a{
+
+.btn a {
     color: white;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
-.btn2{
+
+.btn2 {
     display: block;
     border: 1px;
     font-size: 16px;
@@ -61,37 +64,39 @@ h3{
     color: black;
     cursor: pointer;
     align-self: center;
-    margin-top: 20px;
-
+    margin-top: 10px;
 }
-.btn2 a{
+
+.btn2 a {
     color: black;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
-.recommendations .box2{
+
+.recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recommendations .box2 {
     width: 300px;
     height: 400px;
-    float: left;
     margin: 20px 50px 20px 50px;
     box-sizing: border-box;
     border:1px solid darkgray;
     text-align: center;
     background: lightgray;
-    padding-left: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    
+    padding: 20px;
 }
-.box2 img{
+
+.box2 img {
     padding-top: 20px;
     width: 200px;
     height: 300px;
 }
-.box2 a{
+.box2 a {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    padding: 20px 20px 20px 20px;
-    text-align: center;
 }
 

@@ -1,57 +1,60 @@
 .header {
   padding: 60px;
   text-align: center;
-  background:#DCDCDC;
+  background:#dcdcdc;
   color: black;
   font-size: 30px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   border: 2px solid black;
 }
+
 form {
     width: 600px;
-    margin: auto;
-    margin-top: 20px;
+    margin: 20px auto auto;
 }
+
 input {
     padding: 4px 10px;
     border: 1px solid black;
     font-size: 16px;
 }
+
 .search {
     width: 100%;
-}  
+}
+
 .submit {
     width: 70px;
     background-color: black;
     color: #ffffff;
 }
 
+.search_results {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 .search_results .box3{
     width: 300px;
     height: 400px;
-    float: left;
     margin: 20px 50px 20px 50px;
     box-sizing: border-box;
     border:1px solid darkgray;
     text-align: center;
     background: lightgray;
-    padding-left: auto;
-    padding-top: 20px;
-    padding-bottom: 20px;
-    
+    padding: 20px;
 }
-.box3 img{
+
+.box3 img {
     padding-top: 20px;
     width: 200px;
     height: 300px;
-  
 }
-.box3 a{
+
+.box3 a {
     font-family: Arial, Helvetica, sans-serif;
     color: black;
-    padding: 20px 20px 20px 20px;
-    text-align: center;
-  
 }
 
 p {
@@ -61,11 +64,11 @@ p {
 .error--hidden {
   display: none;
 }
-.search_results .error2{
+
+.search_results .error2 {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 20px;
     text-align: center;
     margin-top: 20px;
     color: red;
-
 }
