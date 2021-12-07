@@ -66,7 +66,7 @@ def similar_movies(movie_id):
 
         if db_response:
             most_similar_movies = ast.literal_eval(db_response["similarity_scores"])
-            return most_similar_movies
+            return most_similar_movies  # this is of the form [ (id, score), (id, score) .... ]
 
     except Exception as ex:
         print(ex)
