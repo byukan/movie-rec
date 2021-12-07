@@ -51,6 +51,9 @@ input {
 .box3 a{
     font-family: Arial, Helvetica, sans-serif;
     color: black;
+    padding-left: 20px;
+    padding-right: auto;
+    text-align: center;
   
 }
 
