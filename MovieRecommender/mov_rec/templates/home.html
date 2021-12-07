@@ -29,7 +29,7 @@
     
     {% for movie in movies %}
         <div class="box3">
-            <a href="{{ url_for ('view_movie', id=movie._id) }}">{{ movie.Series_Title }}<br>
+            <a href="{{ url_for('view_movie', id=movie._id) }}">{{ movie.Series_Title }}<br>
                 <img src="{{ movie.Poster_Link }}" alt="Poster thumbnail">
             </a>
         </div>
