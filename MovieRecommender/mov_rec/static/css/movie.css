@@ -53,13 +53,30 @@ h3{
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
 }
+.btn2{
+    display: block;
+    border: 1px;
+    font-size: 16px;
+    padding: 16px 30px;
+    border-radius: 20px;
+    background: #696969;
+    color: black;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 20px;
 
+}
+.btn2 a{
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
 .recommendations .box2{
     width: 300px;
-    height: 380px;
+    height: 400px;
     float: left;
-   
     margin-left: 100px;
+    margin-bottom: 20px;
     box-sizing: border-box;
     border:1px solid darkgray;
     text-align: center;
@@ -67,12 +84,12 @@ h3{
     padding-left: auto;
     padding-top: 20px;
     padding-bottom: 20px;
-    margin-bottom: 20px;
+    
 }
 .box2 img{
     padding-top: 20px;
     width: 200px;
-    height: auto;
+    height: 300px;
 }
 .box2 a{
     font-family: Arial, Helvetica, sans-serif;
