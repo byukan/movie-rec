@@ -131,3 +131,13 @@ dmypy.json
 
 # Project
 .idea/
+.vscode/
+
+# cypress
+node_modules/
+cypress/fixtures/
+cypress/plugins/
+cypress/support/
+cypress/videos/
+cypress.json
+
