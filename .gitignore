@@ -133,7 +133,7 @@ dmypy.json
 .idea/
 .vscode/
 
-# cypress
+# Cypress
 node_modules/
 cypress/fixtures/
 cypress/plugins/
