@@ -9,7 +9,12 @@ it ("search test", function (){
 
 })
 
-it ("search garbage", function (){
+it ("movie page test", function (){
+
+    cy.visit('http://localhost:5000/view_movie')
+    
+})
+it ("garbage search test", function (){
 
     cy.visit('http://localhost:5000')
     cy.get('.field').type('/.,./,{enter}')
@@ -17,29 +22,28 @@ it ("search garbage", function (){
     
 })
 
-
-it ("movie buttons test", function (){
+it ("buttons test1", function (){
 
     cy.visit('http://localhost:5000/view_movie')
     cy.contains('Show me a different movie').click()
 
 })
 
-it ("movie buttons test", function (){
+it ("buttons test2", function (){
 
     cy.visit('http://localhost:5000/view_movie')
     cy.contains('Go Back to Search Page').click()
 
 })
 
-it ("movie buttons test", function (){
+it ("buttons test3", function (){
 
     cy.visit('http://localhost:5000/view_movie?id=345')
     cy.contains('Show Me a Different Movie').click()
 
 })
 
-it ("movie buttons test", function (){
+it ("buttons test4", function (){
 
     cy.visit('http://localhost:5000/view_movie?id=345')
     cy.contains('Go Back to Search Page').click()
@@ -47,14 +51,14 @@ it ("movie buttons test", function (){
 })
 
 
-it("movie info test", function (){
+it.only ("movie info test", function (){
 
     cy.visit('http://localhost:5000/view_movie?id=496')
     cy.get('.movie_name').should('be.visible')
 
 })
 
-it.only("movie name test", function (){
+it ("movie name test", function (){
 
     cy.visit('http://localhost:5000/view_movie?id=496')
     cy.get('.movie_name').should('be.visible').contains('Letters from Iwo Jima')
