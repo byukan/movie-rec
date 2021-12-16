@@ -52,7 +52,7 @@ it ("return to search from existing movie page test", function (){
 })
 
 
-it.only ("existing movie page test", function (){
+it ("existing movie page test", function (){
 
     cy.visit('http://localhost:5000/view_movie?id=496')
     cy.get('.movie_name').should('be.visible')
