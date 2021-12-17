@@ -10,7 +10,7 @@ import ast
 from bson.objectid import ObjectId
 
 
-def add_user(user):
+def add_user(user):  # no longer relevant
     user_id = None
     try:
         
@@ -27,12 +27,26 @@ def add_user(user):
     return user_id
 
 
-def _set_next_id():
+def set_next_id():
     return random.randint(0, 999)
 
 
 def find_movie(id):
     return db.movies.find_one({'_id': id})
+
+
+def similar_movies(movie_id):
+    try:
+        db_response = db.similar_movies.find_one({'_id': movie_id}, {'_id': 0})
+
+        if db_response:
+            most_similar_movies = ast.literal_eval(db_response["similarity_scores"])
+            return most_similar_movies  # this is of the form [ (id, score), (id, score) .... ]
+
+    except Exception as ex:
+        print(ex)
+
+    return None
 
 
 def movie_info(movie_id, is_main=False):
@@ -57,32 +71,22 @@ def movie_info(movie_id, is_main=False):
     except Exception as ex:
         print(ex)
     
-    return result, _set_next_id()
-
-
-def similar_movies(movie_id):
-    try:
-        db_response = db.similar_movies.find_one({'_id': movie_id}, {'_id': 0})
-
-        if db_response:
-            most_similar_movies = ast.literal_eval(db_response["similarity_scores"])
-            return most_similar_movies  # this is of the form [ (id, score), (id, score) .... ]
-
-    except Exception as ex:
-        print(ex)
-
-    return None
+    return result, set_next_id()
 
 
 def search_movies(search_term):
     movies = []
 
     try:
-        # Full text search using search term
-        # Sort results by relevance, then rating, then title
+        # Full text search using search term, generating relevance score
+        # Rank by relevance, then rating, then sort by title
         # Take the first 9
-        movies = list(
-            db.movies.find({'$text': {'$search': search_term}}, {'score': {'$meta': 'textScore'}}).sort([('score', {'$meta': 'textScore'}), ('IMDB_Rating', -1), ('Series_Title', 1)]).limit(9))
+
+        to_search = {'$text': {'$search': search_term}}
+        relevance_score = {'score': {'$meta': 'textScore'}}
+        sort_criteria = [('score', {'$meta': 'textScore'}), ('IMDB_Rating', -1), ('Series_Title', 1)]
+
+        movies = list(db.movies.find(to_search, relevance_score).sort(sort_criteria).limit(9))
 
     except Exception as ex:
         print(ex)
@@ -90,7 +94,8 @@ def search_movies(search_term):
     return movies
 
 
+# Sort by highest rating, then title, and take the first 9
 def highest_rated_movies():
-    # First sort all the docs by rating, and take the first 9
-    movies = list(db.movies.find({}).sort([('IMDB_Rating', -1), ('Series_Title', 1)]).limit(9))
+    sort_criteria = [('IMDB_Rating', -1), ('Series_Title', 1)]
+    movies = list(db.movies.find({}).sort(sort_criteria).limit(9))
     return movies

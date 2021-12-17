@@ -1,6 +1,5 @@
 import unittest
 from mock_request import MockRequest
-# from mov_rec import view_function_response
 from mov_rec.view_movie import view_movie_response
 
 
@@ -16,7 +15,6 @@ class TestViewMovie(unittest.TestCase):
         movie = view_response.kwargs.get('movie')
         next_id = view_response.kwargs.get('next_id')
         assert 'Suggestions' in movie
-        # check that the suggestions list is correct
 
         assert movie['Series_Title'] == "Pan's Labyrinth"
         assert 0 <= next_id <= 999
