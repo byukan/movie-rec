@@ -1,0 +1,7 @@
+#!/bin/bash
+# File: flask_setup
+# Desc: Sets project Flask variables
+
+export FLASK_APP=mov_rec
+export FLASK_ENV=development
+

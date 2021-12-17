@@ -1,0 +1,23 @@
+{
+  "name": "movie-rec",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">MovieRec   <sub>     <img src=\"https://c.pxhere.com/images/6d/90/07af6a31003f44671b90e75d50a4-1566355.jpg!d\" height=\"50\" width=\"90\">   </sub> </h1>",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byukan/movie-rec.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/byukan/movie-rec/issues"
+  },
+  "homepage": "https://github.com/byukan/movie-rec#readme",
+  "devDependencies": {
+    "cypress": "^9.1.1"
+  }
+}

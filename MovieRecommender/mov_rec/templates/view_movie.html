@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/movie.css') }}" type="text/css">
+{% endblock %}
+
+{% block content %}
+    <header class="movie_name">
+        {% if movie %}
+            {{ movie.Series_Title }}
+        {% else %}
+            This movie does not exist!
+        {% endif %}
+    </header>
+
+    {% if movie %}
+
+        <div class="box">
+            <div class="imgBx">
+                <img src="{{ movie.Poster_Link }}" alt="Poster for {{ movie.Series_Title }}">
+            </div>
+
+            <div class="content">
+                <b>Released:</b> {{ movie.Released_Year }} <br>
+                <b>Director:</b> {{ movie.Director }} <br>
+                <b>Duration:</b> {{ movie.Runtime }} <br>
+                <b>Genre:</b> {{ movie.Genre }} <br>
+                <b>IMDB rating:</b> {{ movie.IMDB_Rating }} <br>
+
+                {% if movie.Gross != movie.Gross %} {# this means the value is NAN #}
+                {% else %}
+                    <b>Gross:</b> ${{ movie.Gross }}<br>
+                {% endif %}
+
+                <br>
+
+                {% set stars = [ movie.Star1, movie.Star2, movie.Star3, movie.Star4 ] %}
+
+                <b>Stars</b><br>
+                <ul>
+                    {% for star in stars %}
+                        {% if not star == None %}
+                            <li>{{ star }}</li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+
+                <br>
+
+                {{ movie.Overview }}
+
+                <hr>
+
+                <button class ="btn">
+                    <a href="{{ url_for('view_movie', id=next_id) }}">Show Me a Different Movie</a>
+                </button>
+                <button class="btn2">
+                    <a href="{{ url_for('search') }}">Go Back to Search Page</a>
+                </button>
+
+            </div>
+        </div>
+
+        <h3>Recommended Movies</h3>
+        <div class="recommendations">
+            {% for suggestion in movie.Suggestions %}
+                <div class="box2">
+                    <a href="{{ url_for('view_movie', id=suggestion._id) }}">{{ suggestion.Series_Title }}<br>
+                        <img src="{{ suggestion.Poster_Link }}" alt="Poster thumbnail">
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+
+    {% else %}
+        <hr>
+        <button class ="btn">
+            <a href="{{ url_for('view_movie', id=next_id) }}">Show Me a Different Movie</a>
+        </button>
+        <button class="btn2">
+            <a href="{{ url_for('search') }}">Go Back to Search Page</a>
+        </button>
+    {% endif %}
+
+{% endblock %}
