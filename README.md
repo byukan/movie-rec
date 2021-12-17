@@ -40,11 +40,14 @@ We've chosen this project because recommender systems are very common; almost ev
 
 ### Setup
 Please do the following so that you can run Flask and run our unit and integration tests.
+- Install the project dependencies by running the following commands:
+  - **pip install -r MovieRecommender/requirements.txt**
+  - **pip install -r model/requirements.txt**
 - Install node.js by visiting this website: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
 - Download Cypress using the following command: **npm install cypress**
   - If this does not work, use one of the other download methods described here: [https://docs.cypress.io/guides/getting-started/installing-cypress](https://docs.cypress.io/guides/getting-started/installing-cypress)
 - Navigate to the top-level folder of this project (it will be *movie-rec* unless you renamed it)
-- Run our setup script, which will install the project dependencies and set a couple Flask variables. Type the following: **source project_setup** 
+- Run our setup script, which will set a couple Flask variables. Type the following: **source project_setup** 
 
 ### How to run Flask and use the website
 - In your terminal, navigate to the *MovieRecommender* directory
