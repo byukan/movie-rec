@@ -36,36 +36,36 @@ We've chosen this project because recommender systems are very common; almost ev
 ### How to clone this repo
 - Make sure to use a password-protected SSH key. Instructions to generate an SSH key and add it to your GitHub account are available at: [https://github.com/settings/keys](https://github.com/settings/keys)
 - In your terminal, navigate to the directory where you want the project to live.
-- Type the following command: **git clone git@github.com:byukan/movie-rec.git**
+- Type the following command: `git clone git@github.com:byukan/movie-rec.git`
 
 ### Setup
 Please do the following so that you can run Flask and run our unit and integration tests.
 - Install the project dependencies by running the following commands:
-  - **pip install -r MovieRecommender/requirements.txt**
-  - **pip install -r model/requirements.txt**
+  - `pip install -r MovieRecommender/requirements.txt`
+  - `pip install -r model/requirements.txt`
 - Install node.js by visiting this website: <https://nodejs.org/en/download/>
-- Download Cypress using the following command: **npm install cypress**
+- Download Cypress using the following command: `npm install cypress`
   - If this does not work, use one of the other download methods described here: <https://docs.cypress.io/guides/getting-started/installing-cypress>
 - Navigate to the top-level folder of this project (it will be *movie-rec* unless you renamed it)
-- Run our setup script, which will set a couple Flask variables. Type the following: **source flask_setup** 
+- Run our setup script, which will set a couple Flask variables. Type the following: `source flask_setup` 
 
 ### How to run Flask and use the website
 - In your terminal, navigate to the *MovieRecommender* directory
 - Run *either* of the following commands (both should work):
-  - **flask run**
-  - **python3 serve.py**
+  - `flask run`
+  - `python3 serve.py`
 - Open up your web browser and visit: **localhost:5000**
 
 ### How to run our unit tests
 - To test our text similarity model:
   - Navigate to the *model* directory
-  - Type the following command: **python3 -m pytest**
+  - Type the following command: `python3 -m pytest`
 - To test access to our MongoDB collections:
   - Navigate to the *mongo* directory
-  - Type the following command: **python3 -m pytest**
+  - Type the following command: `python3 -m pytest`
 - To test our Flask code:
   - Navigate to the *MovieRecommender* directory
-  - Type the following command: **python3 -m unittest**
+  - Type the following command: `python3 -m unittest`
 
 ### How to run our integration tests with Cypress
 - Run flask first (see instructions above)
