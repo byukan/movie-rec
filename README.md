@@ -19,7 +19,7 @@
 
 ## Purpose
 
-This website allows visitors to search, sort, and rate movies, and will recommend similar movies, or movies that similar users like.
+This website allows visitors to search for movies and view movie details, and will recommend similar movies based on the text in the movie overview.
 
 ## Motivation
 
@@ -38,9 +38,10 @@ We've chosen this project because recommender systems are very common; almost ev
 ### Setup
 Please do the following so that you can run Flask and run our unit and integration tests.
 - Install node.js by visiting this website: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+- Download Cypress using the following command: **npm install cypress**
+  - If this does not work, use one of the other download methods described here: [https://docs.cypress.io/guides/getting-started/installing-cypress](https://docs.cypress.io/guides/getting-started/installing-cypress)
 - Navigate to the top-level folder of this project (it will be *movie-rec* unless you renamed it)
-- Run our setup script, which will install the project dependencies, install Cypress, and set a couple Flask variables. Type the following: **source project_setup**
-  - Note: if Cypress installation does not work, you can use one of the other methods described here: [https://docs.cypress.io/guides/getting-started/installing-cypress](https://docs.cypress.io/guides/getting-started/installing-cypress)
+- Run our setup script, which will install the project dependencies and set a couple Flask variables. Type the following: **source project_setup** 
 
 ### How to run Flask and use the website
 - In your terminal, navigate to the *MovieRecommender* directory
@@ -56,6 +57,9 @@ Please do the following so that you can run Flask and run our unit and integrati
 - To test access to our MongoDB collections:
   - Navigate to the *mongo* directory
   - Type the following command: **python3 -m pytest**
+- To test our Flask code:
+  - Navigate to the *MovieRecommender* directory
+  - Type the following command: **python3 -m unittest**
 
 ### How to run our integration tests with Cypress
 - Run flask first (see instructions above)
