@@ -15,6 +15,9 @@
 
 * [Purpose](#purpose)
 * [Motivation](#motivation)
+* [Resources](#resources)
+* [Instructions](#instructions)
+* [YouTube Video Link](#youtube-video-link)
 * [Team](#team)
 
 ## Purpose
