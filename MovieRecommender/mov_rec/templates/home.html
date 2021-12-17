@@ -5,35 +5,34 @@
 {% endblock %}
 
 {% block content %}
+    <div class="header">
+        <h1>MovieRec</h1>
+        <form name="search_movies" method="POST">
+            <label for="search_term">
+                <input type="text" name="search_term" class="field" placeholder="Search here!" required>
+            </label>
+            <p class="error error--hidden"></p>
+            <input type="submit" name="submit" class="submit" value="Search">
+        </form>
+    </div>
 
-<div class="header">
-    <h1>MovieRec</h1>
-    <form name="search_movies" method="POST">
-        <label for="search_term">
-            <input type="text" name="search_term" class="field" placeholder="Search here!" required>
-        </label>
-        <p class="error error--hidden"></p>
-        <input type="submit" name="submit" class="submit" value="Search">
-    </form>
-</div>
+    <div class="search_results">
+        {# Movies will only have id, poster link, and series title available #}
 
-<div class="search_results">
-    {# Movies will only have id, poster link, and series title available #}
+        {% if movies|length == 0 %}
+            <div class="error2">
+                No results to display!
+            </div>
+        {% endif %}
 
-    {% if movies|length == 0 %}
-        <div class="error2">
-            No results to display!
-        </div>
-    {% endif %}
-    
-    {% for movie in movies %}
-        <div class="box3">
-            <a href="{{ url_for('view_movie', id=movie._id) }}">{{ movie.Series_Title }}<br>
-                <img src="{{ movie.Poster_Link }}" alt="Poster thumbnail">
-            </a>
-        </div>
-    {% endfor %}
+        {% for movie in movies %}
+            <div class="box3">
+                <a href="{{ url_for('view_movie', id=movie._id) }}">{{ movie.Series_Title }}<br>
+                    <img src="{{ movie.Poster_Link }}" alt="Poster thumbnail">
+                </a>
+            </div>
+        {% endfor %}
 
-</div>
+    </div>
 
 {% endblock %}
