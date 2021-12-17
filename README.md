@@ -12,7 +12,6 @@
   <br>
 </p>
 
-***
 
 * [Purpose](#purpose)
 * [Motivation](#motivation)
