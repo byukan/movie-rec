@@ -29,7 +29,7 @@ This website allows visitors to search for movies and view movie details, and wi
 We've chosen this project because recommender systems are very common; almost every business wants or uses them. Some of us are also interested in working with text data to find semantic similarities. Beneficiaries of this website include anyone who wants to save time finding movies they will enjoy or appreciate.
 
 ## Resources
-- Data Source: https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows
+- Data Source: <https://www.kaggle.com/harshitshankhdhar/imdb-dataset-of-top-1000-movies-and-tv-shows>
 
 ## Instructions
 
@@ -43,9 +43,9 @@ Please do the following so that you can run Flask and run our unit and integrati
 - Install the project dependencies by running the following commands:
   - **pip install -r MovieRecommender/requirements.txt**
   - **pip install -r model/requirements.txt**
-- Install node.js by visiting this website: [https://nodejs.org/en/download/](https://nodejs.org/en/download/)
+- Install node.js by visiting this website: <https://nodejs.org/en/download/>
 - Download Cypress using the following command: **npm install cypress**
-  - If this does not work, use one of the other download methods described here: [https://docs.cypress.io/guides/getting-started/installing-cypress](https://docs.cypress.io/guides/getting-started/installing-cypress)
+  - If this does not work, use one of the other download methods described here: <https://docs.cypress.io/guides/getting-started/installing-cypress>
 - Navigate to the top-level folder of this project (it will be *movie-rec* unless you renamed it)
 - Run our setup script, which will set a couple Flask variables. Type the following: **source flask_setup** 
 
@@ -54,7 +54,7 @@ Please do the following so that you can run Flask and run our unit and integrati
 - Run *either* of the following commands (both should work):
   - **flask run**
   - **python3 serve.py**
-- Open up your web browser and visit: [https://localhost:5000](https://localhost:5000)
+- Open up your web browser and visit: **localhost:5000**
 
 ### How to run our unit tests
 - To test our text similarity model:
