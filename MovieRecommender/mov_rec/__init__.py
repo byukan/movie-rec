@@ -1,12 +1,10 @@
 from flask import Flask
 from pymongo import MongoClient
 from pymongo.errors import ConnectionFailure
-from flask_bcrypt import Bcrypt
 import certifi
 
 
 app = Flask(__name__)
-bcrypt = Bcrypt(app)
 
 try:
     ca = certifi.where()
@@ -18,4 +16,4 @@ except ConnectionFailure:
     print("ERROR: Server unavailable")
 
 
-from mov_rec import database, models, routes, home, view_movie, view_function_response
+from mov_rec import database, home, view_movie, view_function_response

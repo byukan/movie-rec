@@ -6,7 +6,7 @@ from mov_rec.database import find_movie, similar_movies, movie_info  # related t
 from mov_rec.database import search_movies, highest_rated_movies  # home/search-page related
 
 
-# to check ranking / sorting of results
+# to check ranking / sorting of results (used for multiple tests)
 def is_descending_order(nums):
     for i in range(len(nums) - 1):
         if nums[i] < nums[i + 1]:

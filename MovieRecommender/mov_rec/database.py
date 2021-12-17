@@ -1,30 +1,8 @@
-# this file is to consolidate all database interactions:
-# use any below defined method to interact with the database (currently a stub)
-
+# This file consolidates all database interactions
 
 from mov_rec import db
-from flask import request, Response
-import json
 import random
 import ast
-from bson.objectid import ObjectId
-
-
-def add_user(user):  # no longer relevant
-    user_id = None
-    try:
-        
-        db_response = db.users.insert_one(user)
-        # for attr in dir(dbResponse):
-        #     print(attr)
-        print(db_response.inserted_id)
-
-        user_id = str(db_response.inserted_id)
-
-    except Exception as ex:
-        print(ex)
-
-    return user_id
 
 
 def set_next_id():

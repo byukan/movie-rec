@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, request  # render_template
 from mov_rec import app, database
 from mov_rec.view_function_response import ViewFunctionResponse
 
@@ -22,5 +22,4 @@ def search_response(request):
 
     kwargs = {'movies': movies}
     view_response.create_render_response('home.html', kwargs)
-    # return render_template('home.html', movies=movies)
     return view_response
