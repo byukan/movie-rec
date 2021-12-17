@@ -4,6 +4,7 @@
 
 pip install -r MovieRecommender/requirements.txt
 pip install -r model/requirements.txt
+npm install cypress
 
 export FLASK_APP=mov_rec
 export FLASK_ENV=development
