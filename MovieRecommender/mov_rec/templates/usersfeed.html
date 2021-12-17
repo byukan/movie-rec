@@ -1,34 +1,25 @@
 {% extends "base.html" %}
 
 {% block head %}
-
+<!--{% block title %}Profile{% endblock %}-->
 <link rel="stylesheet" href="{{ url_for('static', filename='css/usersfeed.css') }}" type="text/css">
-
 {% endblock %}
 
-<body>
+{% block content %}
+
 <div class="wrapper">
-
     <div class ="sidenav>">
-
-        
-        <a href="">user's name</a>
-
+        {{ user.first_name }} {{ user.last_name }}
         <ul>
-
-<li> <a href="">Friends</a></li>
-<li> <a href="">Messages</a></li>
-<li> <a href="">My List</a></li>
-<li> <a href="">Liked Movies</a></li>
-<li> <a href="">Recommended Movies</a></li>
-<li> <a href="">Reviews</a></li>
-<li> <a href="">Logout</a></li>
-
-
+            <li> <a href="">Friends</a></li>
+            <li> <a href="">Messages</a></li>
+            <li> <a href="">Saved Movies</a></li>
+            <li> <a href="">Liked Movies</a></li>
+            <li> <a href="">Recommended Movies</a></li>
+            <li> <a href="">Reviews</a></li>
+            <li> <a href="">Logout</a></li>
         </ul>
     </div>
-
-
 </div>
 
-</body>
+{% endblock %}

@@ -130,3 +130,16 @@ dmypy.json
 .DS_Store
 *.xml
 *.iml
+
+# Project
+.idea/
+.vscode/
+
+# Cypress
+node_modules/
+cypress/fixtures/
+cypress/plugins/
+cypress/support/
+cypress/videos/
+cypress.json
+

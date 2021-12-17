@@ -1,0 +1,102 @@
+.box {
+    top: 10%;
+    left: 10%;
+    padding: 20px;
+
+    box-sizing: border-box;
+    background: lightgray;
+    display: flex;
+    border: 2px solid black;
+}
+
+.box img {
+    width: 300px;
+    height: auto;
+    border: 2px solid black;
+}
+
+header {
+    padding: 30px;
+
+    text-align: center;
+    background: darkgray;
+    color: black;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 3px solid black;
+}
+
+.box .content {
+    padding-left: 20px;
+}
+
+h3 {
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 25px;
+}
+
+.btn {
+    display: block;
+    border: 1px;
+    font-size: 16px;
+    padding: 16px 30px;
+    border-radius: 20px;
+    background: black;
+    color: white;
+    cursor: pointer;
+    align-self: center;
+}
+
+.btn a {
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.btn2 {
+    display: block;
+    border: 1px;
+    font-size: 16px;
+    padding: 16px 30px;
+    border-radius: 20px;
+    background: #aaa;
+    color: black;
+    cursor: pointer;
+    align-self: center;
+    margin-top: 10px;
+}
+
+.btn2 a {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+}
+
+.recommendations {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.recommendations .box2 {
+    width: 300px;
+    height: 400px;
+    margin: 20px 50px 20px 50px;
+    box-sizing: border-box;
+    border:1px solid darkgray;
+    text-align: center;
+    background: lightgray;
+    padding: 20px;
+}
+
+.box2 img {
+    padding-top: 20px;
+    width: 200px;
+    height: 300px;
+}
+.box2 a {
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
