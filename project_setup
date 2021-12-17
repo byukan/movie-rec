@@ -1,8 +1,10 @@
 #!/bin/bash
-# File: flask_setup
+# File: project_setup
 # Desc: Installs required modules and sets Flask variables
 
-pip install -r requirements.txt
+pip install -r MovieRecommender/requirements.txt
+pip install -r model/requirements.txt
+
 export FLASK_APP=mov_rec
 export FLASK_ENV=development
 
