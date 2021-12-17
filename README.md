@@ -9,9 +9,9 @@
     MovieRec is a website with a recommender system for movies.
         
   </sup>
-  <br>
 </p>
 
+***
 
 * [Purpose](#purpose)
 * [Motivation](#motivation)
