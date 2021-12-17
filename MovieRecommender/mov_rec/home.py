@@ -1,11 +1,11 @@
-from flask import Flask, request  # render_template
+from flask import Flask, request
 from mov_rec import app, database
 from mov_rec.view_function_response import ViewFunctionResponse
 
 
 @app.route("/", methods=['GET', 'POST'])
 @app.route("/home/", methods=['GET', 'POST'])
-def search():
+def search():  # wrapper for view function, to allow for testing
     view_response = search_response(request)
     return view_response.get_http_response()
 

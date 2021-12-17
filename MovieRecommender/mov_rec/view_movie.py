@@ -1,10 +1,10 @@
-from flask import Flask, request  # render_template
+from flask import Flask, request
 from mov_rec import app, database
 from mov_rec.view_function_response import ViewFunctionResponse
 
 
 @app.route("/view_movie", methods=['GET'])
-def view_movie():
+def view_movie():  # wrapper for view function, to allow for testing
     view_response = view_movie_response(request)
     return view_response.get_http_response()
 

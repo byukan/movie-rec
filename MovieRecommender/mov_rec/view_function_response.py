@@ -1,6 +1,8 @@
 from flask import render_template, request, redirect, url_for
 
 
+# This class allows for view function testing (testing not the website
+# appearance, but rather the behavior of the underlying modules).
 class ViewFunctionResponse:
     def __init__(self):
         self.render_response = False
