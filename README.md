@@ -78,6 +78,11 @@ Please do the following so that you can run Flask and run our unit and integrati
 https://youtu.be/eyzZRgSytEM
 [![Alt text](https://img.youtube.com/vi/eyzZRgSytEM/maxresdefault.jpg)](https://www.youtube.com/watch?v=eyzZRgSytEM)
 
+
+## Notes
+12/20/21: Mongo password changed and repo made public.
+
+
 ## Team
 
 [Aybike Bayraktar](https://github.com/aybikke), [Annat Koren](https://github.com/a-kor-en), & [Brant Yukan](https://github.com/byukan)
