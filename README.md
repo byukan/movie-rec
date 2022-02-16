@@ -7,7 +7,7 @@
 <p align="center">
   <sup>
     MovieRec is a website with a recommender system for movies.
-        
+    https://dvrba-movierec.herokuapp.com/
   </sup>
 </p>
 
